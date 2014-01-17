@@ -1,4 +1,4 @@
 ember-toolbelt
 ==============
 
-Code repository for my EmberJS utility functions and toolbelt
+Alex's toolbelt code repository containing EmberJS utility functions

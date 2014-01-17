@@ -4,7 +4,7 @@
   USAGE: App.ajax('/articles/user/' + user_id);
 */
 App.ajax = function(url, options) {
-  return Ember.RSVP.Promise(function(resolve, reject) {
+  return new Ember.RSVP.Promise(function(resolve, reject) {
     var options = options || {};
 
     options.success = function(data) {

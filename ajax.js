@@ -7,6 +7,8 @@ App.ajax = function(url, options) {
   return new Ember.RSVP.Promise(function(resolve, reject) {
     var options = options || {};
 
+    options.dataType = "json";
+
     options.success = function(data) {
       Ember.run(null, resolve, data);
     };

@@ -1,3 +1,7 @@
+/**
+  Improve performance by removing event listeners on unused events.
+  Great for mobile-heavy applications.
+*/
 Ember.Application.initializer({
   name: 'delete-event-handlers',
 

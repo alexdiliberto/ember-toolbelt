@@ -1,13 +1,17 @@
 /**
   Ember hook to log all errors in production
+  
+  Don't forget to guard against Ember.onerror so it isn't run while testing:
+    http://raytiley.com/posts/ember-onerror-troll
 */
-Ember.onerror = function(error) {
-  Ember.$.ajax('/error-notification', 'POST', {
-    stack: error.stack,
-    otherInformation: 'exception message'
-  });
-};
-
+if (!Ember.testing) {
+  Ember.onerror = function(error) {
+    Ember.$.ajax('/error-notification', 'POST', {
+      stack: error.stack,
+      otherInformation: 'exception message'
+    });
+  };
+}
 
 /**
   Log all errors that are not immediately handled in promises
